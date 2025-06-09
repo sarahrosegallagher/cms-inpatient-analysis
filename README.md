@@ -1,21 +1,51 @@
-# CMS Inpatient Analysis – Medicare Cost & Utilization
+# CMS Inpatient Analytics (In Progress)
 
-## 📌 Project Purpose
+This project demonstrates a healthcare data analytics workflow using publicly available **CMS inpatient data**. It models a real-world scenario—shifting from SQL Server–style logic to a modern **Databricks + Power BI** pipeline—to build scalable, payer-facing reporting and insights.
 
-This project explores variation in inpatient hospital costs and outcomes across the U.S. using CMS Medicare data. The goal is to identify how costs differ by hospital type, region, and population characteristics — and to build payer-relevant metrics such as cost-efficiency, readmission-adjusted payment rates, and DRG-level benchmarking.
+## 🔍 Project Purpose
 
-The project is built in Power BI and includes data modeling, Power Query transformations, and advanced DAX calculations, with a focus on producing analysis that is both actionable and scalable.
+- Simulate a modern healthcare analytics stack using Databricks and Power BI  
+- Apply **PySpark** and **SQL** in **Databricks notebooks** to replicate data transformation workflows  
+- Build a **Power BI** dashboard using **Power Query** and **DAX**, backed by a **star schema** model  
+- Showcase end-to-end skills in **ETL**, **data modeling**, and **visualization** commonly used in migration efforts
 
----
+## 🧰 Tech Stack
 
-## 📚 Datasets Used
+### Databricks
+- PySpark (data cleaning, transformation, and aggregation)
+- SQL (exploratory queries and validation)
+- Notebook workflows (simulated via job orchestration)
+- Delta Lake tables (Bronze, Silver, Gold layers)
 
-| **Dataset Name**                                         | **Function / Role in Project**                                                                 |
-|----------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| **Medicare Inpatient Hospitals by Provider and Service** | 🔹 **Core fact table** – Hospital- and DRG-level utilization, cost, and payment data            |
-| **CMS Program Statistics – HOSP 3 (by Area of Residence)** | 🔹 Regional benchmarking – Cost, discharges, and payments by geography                         |
-| **CMS Program Statistics – HOSP 4 (by Hospital Type)**     | 🔹 Segment analysis – Compare cost/utilization by facility type (e.g., general, psych)         |
-| **CMS Program Statistics – HOSP 9 (by Bedsize, Ownership, Teaching)** | 🔹 Provider characteristics – Used for slicing and grouping peer facilities         |
-| **CMS Program Statistics – HOSP 2 or 6 (by Demographics)** | 🔹 Population insight – Analyze cost/utilization by race, dual-eligibility, age                |
-| **Medicare Monthly Enrollment (by State or County)**      | 🔹 **Normalization dimension** – Allows per-enrollee cost/utilization rate calculations         |
-| **Hospital Info / Certification Data**                    | 🔹 **Hospital dimension table** – Join to provider+DRG data to enrich with ownership, region   |
+### Power BI
+- Power Query (data ingestion and transformation)
+- DAX (calculated fields and measures)
+- Interactive dashboards (payer-focused reporting layout)
+
+### Cloud Storage
+- AWS S3 (for raw CMS files)
+
+### Data Source
+- CMS Inpatient Public Datasets (cleaned and modeled for reporting use cases)
+
+## ⚙️ Workflow Automation (In Progress)
+
+This project includes a simulated Databricks Job Workflow to demonstrate cloud-native orchestration and modular ETL structure.  
+Tasks include ingestion, transformation, and summary layers, aligned with a medallion architecture (Bronze → Gold).
+
+> _(Coming soon)_  
+- 📸 **[Workflow Screenshot](images/job_screenshot.png)**  
+- 🧾 **[YAML-style Summary](job_config_summary.md)**  
+- 🧬 **[Full JSON Export](job_definition.json)**
+
+## 📊 Dashboard Output (In Progress)
+
+> _(Coming soon)_  
+> Screenshot and public Power BI embed (if applicable) will be added here to demonstrate end-user reporting experience.
+
+## 💡 Real-World Relevance
+
+This project is designed to reflect common patterns in healthcare analytics modernization:
+- Replacing legacy SQL Server logic with Databricks notebooks and cloud-based storage
+- Creating clean, trusted data models to support visualization tools like Power BI
+- Using PySpark and DAX to bridge engineering and reporting layers in a collaborative, Agile environment
